@@ -56,7 +56,7 @@ It is clear that Denver was the county with the largest turnaround. This was all
 
 By refactoring our code we were able to quickly add a county analysis by using similar logic to what we wrote for the candidate analysis. 
 
-In the code below we can observe the similarities between the two, in this example we see how we obtained a unique list of Counties by using a similar logic to the candidate name list by leveraging the same reader object "reader". 
+In the code below we can observe the similarities between what we added and our original code, in this example we see how we obtained a unique list of Counties by using a similar logic to the candidate name list by leveraging the same reader object "reader". This code could be used again if we enhanced the structure of the file to maybe roll up geographycally to a "City" instead of just county or by "Political Party" instead of just by candidate. The same logic could be used to calculate the roll-up counts as well by just adding an additional section of code. 
 
 ```python
 with open(file_to_load) as election_data:
@@ -103,10 +103,7 @@ with open(file_to_load) as election_data:
 ```
 This could be leveraged to calculate the results of ANY election. We could make the code more generic to obtain the name of the "County", "State" or "Country" from the name of the file or from the header row of the file instead of "hard-coding" it into our print statements to make this more reusable as long as the file structure remains the same. 
 
-
-
-
-Similarly, we were able to reuse the logic to write to a file using the same file_save path with a "write / w" option just by including the write function in two separate occasions: 
+Similarly, we were able to reuse the logic to write to a file using the same file_save path with a "write / w" option just by including the write function in two separate occasions, if needed we could separate the output of the two analysis by leveraging two different files and adding an additional with open(file_to_save2,"w") as txt_file2 statement. 
 
 ```python
 # Save the results to our text file.
